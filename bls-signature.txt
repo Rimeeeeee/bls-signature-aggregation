@@ -1,0 +1,23 @@
+ Compiling bls-signature-aggregation v0.1.0 
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.72s
+     Running unittests src\main.rs 
+
+running 6 tests
+test tests::test_empty_aggregate ... ok
+test tests::test_generate_keypair ... ok
+test tests::test_single_signature_aggregate ... ok
+test tests::test_sign_message ... ok
+test tests::test_aggregate_signatures ... ok
+test tests::test_verify_aggregate ... ok
+
+successes:
+
+successes:
+    tests::test_aggregate_signatures
+    tests::test_empty_aggregate
+    tests::test_generate_keypair
+    tests::test_sign_message
+    tests::test_single_signature_aggregate
+    tests::test_verify_aggregate
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
