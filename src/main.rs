@@ -89,7 +89,6 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
-   
 
     // Test case to check if the key pair is generated correctly.
     #[test]
@@ -127,7 +126,10 @@ mod tests {
         let agg_sig = aggregate_signatures(&signatures).unwrap();
 
         // The aggregated signature should not be empty
-        assert!(!agg_sig.to_bytes().is_empty(), "Aggregated signature is empty");
+        assert!(
+            !agg_sig.to_bytes().is_empty(),
+            "Aggregated signature is empty"
+        );
 
         // Verify the aggregated signature
         let pubkeys = vec![pk1, pk2];
@@ -162,7 +164,10 @@ mod tests {
         let agg_sig = aggregate_signatures(&[]);
 
         // The result should be None, as no signatures exist to aggregate.
-        assert!(agg_sig.is_none(), "Aggregation should return None for empty input");
+        assert!(
+            agg_sig.is_none(),
+            "Aggregation should return None for empty input"
+        );
     }
 
     // Test case for edge case where there is only one signature to aggregate.
@@ -176,6 +181,9 @@ mod tests {
         let agg_sig = aggregate_signatures(&[sig]).unwrap();
 
         // The aggregated signature should be the same as the original signature when there's only one.
-        assert_eq!(agg_sig, sig, "Aggregated signature should be the same as the original signature");
+        assert_eq!(
+            agg_sig, sig,
+            "Aggregated signature should be the same as the original signature"
+        );
     }
 }
